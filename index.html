@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shane Guénin — Music Industry Strategist</title>
+  <meta name="description" content="Shane Guénin — Montreal-based music industry strategist working across A&R, artist development, marketing, and creative production." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #555555;
+      --text-soft: #888888;
+      --link: #222222;
+      --nav: #666666;
+      --max: 38rem;
+      --pad-x: clamp(1.5rem, 8vw, 4rem);
+      --pad-top: clamp(5rem, 12vh, 6.25rem);
+    }
+
+    html[data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #a8a8a8;
+      --text-soft: #777777;
+      --link: #eaeaea;
+      --nav: #999999;
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+      font-weight: 400;
+      letter-spacing: -0.011em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .mono {
+      font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+    }
+
+    .top-nav {
+      text-align: center;
+      padding: 1.25rem var(--pad-x) 0;
+      color: var(--nav);
+    }
+
+    .top-nav a {
+      color: var(--nav);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus-visible {
+      color: var(--link);
+      outline: none;
+    }
+
+    .top-nav .sep {
+      margin: 0 0.4em;
+      opacity: 0.7;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: var(--pad-top) var(--pad-x) 6rem;
+    }
+
+    .headline {
+      margin: 0 0 0.35rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: -0.015em;
+      color: var(--link);
+    }
+
+    .meta {
+      margin: 0 0 0.35rem;
+      color: var(--text);
+    }
+
+    .meta a {
+      color: var(--link);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .meta a:hover,
+    .meta a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    section { margin-top: 2.5rem; }
+
+    h2 {
+      margin: 0 0 0.85rem;
+      font-size: 0.8125rem;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: var(--text-soft);
+    }
+
+    h3 {
+      margin: 0 0 0.55rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.012em;
+      color: var(--link);
+    }
+
+    section p {
+      margin: 0 0 1rem;
+    }
+
+    section p:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--link);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      text-decoration-thickness: 1px;
+      outline: none;
+    }
+
+    a:focus-visible {
+      outline: 1px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    .name-link {
+      color: var(--link);
+      font-weight: 600;
+    }
+
+    .company-logo {
+      height: 1.25em;
+      max-height: 1.25em;
+      width: auto;
+      margin: 0 4px;
+      vertical-align: middle;
+      display: inline-block;
+      transition: filter 0.15s ease;
+    }
+
+    a:hover .company-logo,
+    a:focus-visible .company-logo {
+      filter: brightness(1.15);
+    }
+
+    a:has(.company-logo) {
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .logo-word {
+      font-weight: 600;
+      color: var(--link);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      pointer-events: none;
+      background: linear-gradient(to top, var(--bg) 55%, transparent);
+    }
+
+    .site-footer .clock,
+    .site-footer .theme-toggle { pointer-events: auto; }
+
+    .site-footer .clock { color: var(--text-soft); }
+
+    .theme-toggle {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--nav);
+      cursor: pointer;
+      padding: 0.35rem 0.5rem;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible { color: var(--link); outline: none; }
+
+    .theme-toggle:focus-visible {
+      outline: 1px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav mono" aria-label="Primary">
+    <a href="./">Shane Guénin</a><span class="sep" aria-hidden="true">|</span><a href="mailto:shane@sdotguenin.com" id="contact">Contact</a>
+  </nav>
+
+  <main>
+    <p class="headline">Music Industry Strategist · A&amp;R · Artist Development &amp; Creative Production</p>
+    <p class="meta">Montreal, Canada</p>
+    <p class="meta"><a href="mailto:shane@sdotguenin.com">shane@sdotguenin.com</a></p>
+
+    <section aria-labelledby="profile">
+      <h2 id="profile">Profile —</h2>
+      <p>
+        Shane Guénin is a Montreal-based music industry professional working at the intersection of artist development, A&amp;R, marketing, and creative production. With over a decade of experience across the music industry, he brings together creative vision, strategic partnerships, and commercial opportunities to help artists and producers build their careers.
+      </p>
+      <p>
+        As co-founder of
+        <a href="https://www.instagram.com/softspokenco/" rel="noopener noreferrer">
+          <img src="logos/soft-spoken-co.png" alt="Soft Spoken Co." class="company-logo" decoding="async" fetchpriority="high" />
+        </a>,
+        he has led artist development, marketing campaigns, visual production, and release strategies, working closely with recording artist <span class="name-link">CJ Flemings</span> across music, media, and culture.
+      </p>
+    </section>
+
+    <section aria-labelledby="currently">
+      <h2 id="currently">Currently —</h2>
+      <h3>A&amp;R, Artist &amp; Producer Management, and Music Marketing</h3>
+      <p>
+        Shane works across artist and producer development, music pitching, and campaign strategy. His work includes coordinating opportunities for producers through publishing relationships, developing creative briefs into targeted submissions, and supporting recording artists with release rollouts, audience development, and DSP strategy.
+      </p>
+      <p>
+        He has worked across the major digital streaming platform ecosystem, including
+        <a href="https://open.spotify.com/" rel="noopener noreferrer">
+          <img src="logos/spotify.png" alt="Spotify" class="company-logo" decoding="async" loading="lazy" />
+        </a>,
+        <a href="https://music.apple.com/" rel="noopener noreferrer">
+          <img src="logos/apple-music.png" alt="Apple Music" class="company-logo" decoding="async" loading="lazy" />
+        </a>,
+        and
+        <a href="https://music.amazon.com/" rel="noopener noreferrer">
+          <img src="logos/amazon-music.png" alt="Amazon Music" class="company-logo" decoding="async" loading="lazy" />
+        </a>,
+        helping connect music, marketing, and audience engagement.
+      </p>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Industry Experience &amp; Partnerships —</h2>
+      <p>
+        Shane has collaborated across the music industry, building relationships with publishing companies, digital service providers, artists, producers, and creative partners.
+      </p>
+      <p>
+        <strong>Publishing &amp; A&amp;R:</strong>
+        industry relationships with
+        <a href="https://www.sonymusicpub.com/" rel="noopener noreferrer">
+          <img src="logos/sony-publishing.png" alt="Sony Music" class="company-logo" decoding="async" loading="lazy" />
+        </a>
+        Publishing,
+        <a href="https://www.warnerchappell.com/" rel="noopener noreferrer">
+          <img src="logos/warner-chappell.png" alt="Warner Chappell Music" class="company-logo" decoding="async" loading="lazy" />
+        </a>,
+        and
+        <a href="https://www.umusicpub.com/" rel="noopener noreferrer">
+          <img src="logos/universal-music-publishing.png" alt="Universal Music Publishing Group" class="company-logo" decoding="async" loading="lazy" />
+        </a>.
+      </p>
+      <p>
+        <strong>Digital Music &amp; Marketing:</strong>
+        experience supporting artist campaigns, release strategies, and platform-focused initiatives across major DSPs.
+      </p>
+      <p>
+        <strong>Artist Development &amp; Creative Production:</strong>
+        co-founder of
+        <a href="https://www.instagram.com/softspokenco/" rel="noopener noreferrer">
+          <img src="logos/soft-spoken-co.png" alt="Soft Spoken Co." class="company-logo" decoding="async" loading="lazy" />
+        </a>,
+        leading marketing, visual campaigns, content production, and artist strategy for CJ Flemings.
+      </p>
+      <p>
+        <strong>Previous Experience:</strong>
+        artist development and A&amp;R with
+        <a href="https://www.wmg.com/" rel="noopener noreferrer">
+          <img src="logos/warner-music-mark.png" alt="Warner Music" class="company-logo" decoding="async" loading="lazy" />
+        </a>;
+        content marketing at
+        <a href="https://cinematicworldwide.com/" rel="noopener noreferrer">
+          <img src="logos/cinematic.png" alt="Cinematic Music Group" class="company-logo" decoding="async" loading="lazy" />
+        </a>
+        Cinematic Music Group in New York; and artist campaign and DSP strategy collaborations with
+        <a href="https://www.apple.com/apple-music/" rel="noopener noreferrer"><img src="logos/apple.svg" alt="" class="company-logo" style="margin-right: 0.15em;" decoding="async" loading="lazy" /><span class="logo-word">Creative</span></a>.
+      </p>
+    </section>
+
+    <section aria-labelledby="approach">
+      <h2 id="approach">Approach —</h2>
+      <p>
+        Combining industry relationships with creative execution and commercial thinking, Shane helps artists and producers navigate the music business, develop compelling campaigns, and identify opportunities for long-term growth.
+      </p>
+      <p class="meta">Portfolio and résumé available upon request.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <time class="clock mono" id="montreal-clock" datetime="" aria-live="polite"></time>
+    <button type="button" class="theme-toggle mono" id="theme-toggle" aria-pressed="false" title="Toggle dark mode">Dark</button>
+  </footer>
+
+  <script>
+    (function () {
+      var clockEl = document.getElementById("montreal-clock");
+      var toggle = document.getElementById("theme-toggle");
+      var root = document.documentElement;
+      var storageKey = "sg-theme";
+
+      function formatMontreal(date) {
+        try {
+          return new Intl.DateTimeFormat("en-CA", {
+            timeZone: "America/Toronto",
+            weekday: "short",
+            year: "numeric",
+            month: "short",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+          }).format(date);
+        } catch (e) {
+          return date.toLocaleString();
+        }
+      }
+
+      function tick() {
+        var now = new Date();
+        clockEl.textContent = formatMontreal(now) + " · Montreal";
+        clockEl.setAttribute("datetime", now.toISOString());
+      }
+
+      tick();
+      setInterval(tick, 1000);
+
+      function applyTheme(theme) {
+        if (theme === "dark") {
+          root.setAttribute("data-theme", "dark");
+          toggle.setAttribute("aria-pressed", "true");
+          toggle.textContent = "Light";
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", "#1a1a1a");
+        } else {
+          root.removeAttribute("data-theme");
+          toggle.setAttribute("aria-pressed", "false");
+          toggle.textContent = "Dark";
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", "#ffffff");
+        }
+      }
+
+      var saved = null;
+      try { saved = localStorage.getItem(storageKey); } catch (e) {}
+      applyTheme(saved === "dark" ? "dark" : "light");
+
+      toggle.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(next);
+        try { localStorage.setItem(storageKey, next); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>
